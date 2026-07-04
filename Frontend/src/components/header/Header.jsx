@@ -1,5 +1,5 @@
 import React from 'react'
-import {useNavigate} from 'react-dom'
+import {useNavigate, Link} from 'react-router-dom'
 
 function Header() {
     const navigate = useNavigate()
@@ -24,10 +24,16 @@ function Header() {
     ]
   return (
     <div>
+     <div className='mr-4'>
+        <Link to='/'>
+        <h1>Logo</h1>
+        </Link>
+     </div>
      <ul>
       {navItem.map((item)=>(
         <li key={item.title}>
-            <button onClick={()=>navigate(item.path)}>{item.title}</button>
+            <button  className='inline-block py-6 px-6 '
+             onClick={()=>navigate(item.path)}>{item.title}</button>
         </li>
       ))}
      </ul> 
